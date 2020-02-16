@@ -11,4 +11,17 @@ public void ConfigureServices(IServiceCollection services)
                .WithExposedHeaders("Grpc-Status", "Grpc-Message");
     }));
 }
+
+public void Configure(IApplicationBuilder app)
+{
+    app.UseRouting();
+
+    app.UseGrpcWeb();
+    app.UseCors();
+
+    app.UseEndpoints(endpoints =>
+    {
+        endpoints.MapGrpcService<GreeterService>().RequireCors("AllowAll");
+    });
+}
 #endregion
