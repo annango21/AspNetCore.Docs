@@ -49,7 +49,7 @@ Browser security prevents a web page from making requests to a different domain 
 
 To allow your browser app to make cross-origin gRPC-Web calls you must setup [CORS in ASP.NET Core](xref:security/cors). Use the built-in CORS support, and expose gRPC-Web specific headers with <xref:Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicyBuilder.WithExposedHeaders*>.
 
-[!code-csharp[](~/grpc/browser/sample/CORS_Startup.cs?name=snippet_1&highlight=5-11,19,23)]
+[!code-csharp[](~/grpc/browser/sample/CORS_Startup.cs?name=snippet_1&highlight=5,19,25)]
 
 ## Call gRPC-Web from the browser
 

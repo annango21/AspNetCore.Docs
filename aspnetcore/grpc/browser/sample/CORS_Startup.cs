@@ -21,7 +21,9 @@ public void Configure(IApplicationBuilder app)
 
     app.UseEndpoints(endpoints =>
     {
-        endpoints.MapGrpcService<GreeterService>().RequireCors("AllowAll");
+        endpoints.MapGrpcService<GreeterService>()
+                 .EnableGrpcWeb()
+                 .RequireCors("AllowAll");
     });
 }
 #endregion
